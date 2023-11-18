@@ -1,0 +1,466 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+
+.cf { zoom: 1; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* common styling starts here */
+
+/*for wrapper*/
+.wrapper {
+  width: 86.94%;
+  max-width: 1155px;
+  margin: 0px auto;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* common styling ends here */
+
+/*=================================
+  programs section styling starts here
+=================================*/
+
+.programs-section {
+  padding: 148px 0;
+}
+
+.programs-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+  font-size: 27px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.choose::after {
+  color: #EE5639;
+  content: "Program";
+}
+
+.lines {
+  margin-bottom: 23px;
+}
+
+.section-para {
+  margin-bottom: 78px;
+  width: 45%;
+  color: #534b43;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.programs-list figure {
+  margin-right: 30px;
+}
+
+.programs-list figure img{
+  border-radius: 5px;
+}
+
+.programs-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.programs-list li {
+  display: flex;
+
+}
+
+.programs-list li{
+  flex-basis: 45%;
+}
+
+.programs-list li:not(:last-child, :nth-child(5)) {
+  margin-bottom: 65px;
+}
+
+.programs-list li:nth-child(odd) {
+  margin-right: 70px;
+}
+
+.program-heading {
+  color: #3A3D40;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.programs-para {
+  margin-top: 8px;
+  color: #534b43;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.para-links { 
+  color: #2d89f1;
+  font-weight: 600;
+}
+
+.discovere-more {
+  margin-top: 8px;
+  color: #EE5639;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/*=================================
+  programs section styling ends here
+=================================*/
+
+/*=================================
+  media query for 995 starts here
+=================================*/
+
+@media only screen and (max-width: 995px) {
+  
+  .programs-list {
+    justify-content: center;
+  }
+
+  .programs-list li{
+    flex-basis: 80%;
+  }
+
+  .programs-list li:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .programs-list li:nth-child(5) {
+    margin-bottom: 65px;
+  }
+}
+
+/*=================================
+  media query for 995 ends here
+=================================*/
+
+/*=================================
+  media query for 768 starts here
+=================================*/
+
+@media only screen and (max-width: 768px) {
+
+  .programs-section {
+    padding: 50px 0;
+  }
+
+  .section-para {
+    width: 80%;
+  }
+
+  .programs-list li{
+    flex-basis: 90%;
+  }
+}
+
+/*=================================
+  media query for 768 ends here
+=================================*/
+
+
+/*=================================
+  media query for 640 starts here
+=================================*/
+
+@media only screen and (max-width: 640px) {
+
+  .section-para {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .programs-list li{
+    flex-basis: 100%;
+  }
+
+  .programs-list figure {
+    margin-right: 20px;
+  }
+
+  .programs-list img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .programs-list figure {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*=================================
+  media query for 640 ends here
+=================================*/
+
+
+/*=================================
+  media query for 480 starts here
+=================================*/
+
+@media only screen and (max-width: 480px) {
+
+  .section-heading {
+    font-size: 24px;
+  }
+
+  .section-para {
+    font-size: 14px;
+  }
+
+  .programs-para {
+    font-size: 14px;
+  }
+
+  .program-heading {
+    font-size: 18px;
+  }
+
+  .programs-list img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .programs-list li {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .programs-list li:not(:last-child, :nth-child(5)) {
+    margin-bottom: 45px;
+  }
+
+  .programs-list li:nth-child(5) {
+    margin-bottom: 45px;
+  }
+
+  .programs-list figure {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/*=================================
+  media query for 480 ends here
+=================================*/
+
+
+/*=================================
+  media query for 375 starts here
+=================================*/
+
+@media only screen and (max-width: 375px) {
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .section-para {
+    font-size: 13px;
+  }
+
+  .section-para {
+    margin-bottom: 30px;
+  }
+
+  .programs-para {
+    font-size: 13px;
+  }
+
+  .program-heading {
+    font-size: 16px;
+  }
+
+  .programs-list img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/*=================================
+  media query for 375 ends here
+=================================*/
